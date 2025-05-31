@@ -1,0 +1,501 @@
+/* Estilos generales */
+:root {
+  --primary: #6c63ff;
+  --secondary: #4d44db;
+  --dark: #212121;
+  --light-dark: #313131;
+  --light: #f5f5f5;
+  --accent: #e81cff;
+  --accent-secondary: #40c9ff;
+  --text: #242424;
+  --text-light: #636363;
+}
+
+body {
+  background-color: #f8f9fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  line-height: 1;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+h1,
+h2 {
+  color: var(--dark);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 2rem;
+}
+
+/* Formulario mejorado */
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(
+        145deg,
+        transparent 35%,
+        var(--accent),
+        var(--accent-secondary)
+      )
+      border-box;
+  border: 2px solid transparent;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.425);
+  border-radius: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+.form-container h2 {
+  text-align: center;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: -webkit-fill-available;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-family: inherit;
+  background-color: #fff;
+  border: 1px solid #aaaaaa;
+  transition: all 0.3s ease;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+}
+
+/* Botones mejorados */
+button {
+  position: relative;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-family: inherit;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Botón tipo submit (principal) */
+button[type="submit"] {
+  background-color: var(--primary);
+  color: white;
+  margin-right: 1rem;
+}
+
+/* Botón tipo button (secundario) */
+button[type="button"] {
+  background-color: #f0f0f0;
+  color: var(--text);
+}
+
+/* Hover para ambos tipos de botón */
+button[type="submit"]:hover,
+button[type="button"]:hover {
+  color: black;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(108, 99, 255, 0.2);
+}
+
+/* Efecto al hacer clic */
+button:active {
+  transform: scale(0.98);
+}
+
+/* Animación diagonal al hacer hover (para ambos tipos de botón) */
+button::after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s ease;
+}
+
+button:hover::after {
+  transform: skewX(-45deg) scale(1, 1);
+}
+
+/* Tabla de productos mejorada con bordes degradados */
+.productos-container {
+  margin-top: 2rem;
+  overflow-x: auto;
+
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(
+        145deg,
+        transparent 35%,
+        var(--accent),
+        var(--accent-secondary)
+      )
+      border-box;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.425);
+  transition: box-shadow 0.3s ease;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.425);
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+table th,
+table td {
+  border: 1px solid #00000031; /* Separación entre columnas y filas */
+  padding: 1rem;
+  text-align: center;
+}
+
+table th {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 600;
+}
+
+table tr:not(:first-child):hover {
+  background-color: rgba(108, 99, 255, 0.05);
+}
+
+table button {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  font-family: inherit;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+table button:hover {
+  opacity: 0.9;
+}
+
+table button:first-child {
+  background-color: #4caf50;
+  color: white;
+}
+
+table button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+/* Botón para agregar producto */
+.add-product-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Modal de confirmación */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Notificación */
+.notification {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+  z-index: 1000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Botones de acción */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.action-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #f0f0f0;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+  background-color: var(--primary);
+  color: black;
+  transform: translateY(-2px);
+}
+
+.action-btn.active {
+  background-color: var(--primary);
+  color: white;
+}
+.action-btn.active:hover {
+  background-color: var(--primary);
+  color: black;
+  transform: translateY(-2px);
+}
+
+/* Estilos para la tarjeta de confirmación (del código que quieres agregar) */
+.card {
+  width: 300px;
+  height: fit-content;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.068);
+}
+
+.card-content {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.card-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(27, 27, 27);
+}
+
+.card-description {
+  font-weight: 100;
+  color: rgb(102, 102, 102);
+}
+
+.card-button-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.card-button {
+  width: 50%;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.primary {
+  background-color: #f44336;
+  color: white;
+}
+
+.primary:hover {
+  background-color: rgb(255, 73, 66);
+  color: black;
+  transform: translateY(-2px);
+}
+
+.secondary {
+  background-color: #ddd;
+}
+
+.secondary:hover {
+  background-color: rgb(197, 197, 197);
+}
+
+.exit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.exit-button:hover svg {
+  fill: black;
+}
+
+.exit-button svg {
+  fill: rgb(175, 175, 175);
+}
+/* Estilos para botones de acción en tabla */
+.btn.edit {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btn.delete {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn.secondary {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+/* Estilos para notificación */
+.notification {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4d44db;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    bottom: 0;
+  }
+  to {
+    opacity: 1;
+    bottom: 30px;
+  }
+}
+
+/* Estilos para botón flotante */
+.add-product-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Resto de los estilos del modal (card) ya están incluidos en tu CSS original */
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem;
+  }
+
+  .form-container {
+    padding: 1.5rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
